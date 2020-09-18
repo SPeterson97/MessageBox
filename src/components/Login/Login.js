@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import styles from "./Login.styles.js";
+import "./Login.css";
 
 class Login extends Component {
     /**
@@ -17,8 +17,8 @@ class Login extends Component {
     render() {
         return (
             <React.Fragment>
-                <style jsx>{}
-                    {styles}
+                <style jsx>{`
+                    `}
                 </style>
             </React.Fragment>
         );

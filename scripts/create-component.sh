@@ -5,7 +5,7 @@ read -r -d '' COMPONENT << DONE
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import styles from "./$1.styles.js";
+import "./$1.css";
 
 class $1 extends Component {
     /**
@@ -21,9 +21,8 @@ class $1 extends Component {
     render() {
         return (
             <React.Fragment>
-                <style jsx>{`
-                    `}
-                    {styles}
+                <style jsx>{\`
+                    \`}
                 </style>
             </React.Fragment>
         );
@@ -46,8 +45,9 @@ export default $1;
 DONE
 
 read -r -d '' STYLES << DONE
-export default \`
-\`;
+/**
+ * Use this to create styles for $1
+ */
 DONE
 
 read -r -d '' STORY << DONE
@@ -63,7 +63,6 @@ const Template = (args) => <$1 {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    size:100,
 };
 DONE
 
@@ -71,11 +70,11 @@ DONE
 
 #################### SCRIPT ###################
 
-mkdir "$PWD/components/$1"
-cd "$PWD/components/$1"
+mkdir "$PWD/src/components/$1"
+cd "$PWD/src/components/$1"
 
-echo "$COMPONENT" > $1.jsx
-echo "$STYLES" > $1.styles.js
+echo "$COMPONENT" > $1.js
+echo "$STYLES" > $1.css
 echo "$STORY" > $1.stories.js
 
 ###############################################

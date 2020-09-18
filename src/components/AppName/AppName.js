@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import styles from "./AppName.styles.js";
+import "./AppName.css";
 
 class AppName extends Component {
     /**
@@ -17,16 +17,16 @@ class AppName extends Component {
     render() {
         return (
             <React.Fragment>
-                <span className="appName" width={this.props.size} >
+                <span className="appName test" width={this.props.size} >
                     MessageBox
                 </span>
                 <style jsx>{`
                     .appName {
-                        font-size: ${this.props.size}px;
+                        ${this.props.size ? `font-size: ${this.props.size}px` : ""}
                     }
                     `}
-                    {styles}
                 </style>
+                
             </React.Fragment>
         );
     }
@@ -36,7 +36,7 @@ class AppName extends Component {
  * Defines the props accepted by AppName
  */
 AppName.defaultProps = {
-    size: 10,
+    size: undefined,
 }
 
 /**
