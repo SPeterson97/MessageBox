@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AppName from "./components/AppName/AppName";
 
 function App() {
   return (
@@ -20,9 +19,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <footer>
-        <AppName size={50} />
-      </footer>
     </div>
   );
 }
